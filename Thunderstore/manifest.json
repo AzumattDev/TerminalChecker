@@ -1,0 +1,9 @@
+{
+  "name": "TerminalChecker",
+  "version_number": "1.0.0",
+  "website_url": "https://discord.gg/pdHgy6Bsng",
+  "description": "This mod will check all patches to the Terminal class and warn you of older mods that are patching it. Attempts to help you find the newfound source of your troubles since Hildir.",
+  "dependencies": [
+    "denikson-BepInExPack_Valheim-5.4.2105"
+  ]
+}
