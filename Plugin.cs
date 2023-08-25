@@ -4,10 +4,8 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using BepInEx;
-using BepInEx.Configuration;
 using BepInEx.Logging;
 using HarmonyLib;
-using JetBrains.Annotations;
 using UnityEngine;
 
 namespace TerminalChecker
@@ -61,8 +59,16 @@ namespace TerminalChecker
                 var assemblyDate = GetLinkerTime(patch.PatchMethod.DeclaringType.Assembly, TimeZoneInfo.Utc);
                 if (assemblyDate >= comparisonDate) continue;
 
+#if DEBUG
+                var timeDifference = comparisonDate - assemblyDate;
+                LogTheThings($"Assembly `{patch.PatchMethod.DeclaringType.Assembly.GetName().Name}` appears to be old. " +
+                             $"Detected UTC timestamp: {assemblyDate:G} which is {timeDifference.Days} days, {timeDifference.Hours} hours, and {timeDifference.Minutes} minutes older than reference date." +
+                             $" It has a {patchTypeName} patch on method {methodName} in Terminal class. Inside the following patch: {patch.PatchMethod.Name}{Environment.NewLine}");
+
+#else
                 LogTheThings($"Assembly `{patch.PatchMethod.DeclaringType.Assembly.GetName().Name}` appears to be old and has a " +
                              $"{patchTypeName} patch on method {methodName} in Terminal class. Inside the following patch: {patch.PatchMethod.Name}{Environment.NewLine}");
+#endif
             }
         }
 
