@@ -1,3 +1,4 @@
-| `Version` | `Update Notes`    |
-|-----------|-------------------|
-| 1.0.0     | - Initial Release |
+| `Version` | `Update Notes`                                                                                                                                                                                               |
+|-----------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 2.0.0     | - Rework the entire mod to pull information from Margmas's API. His API is similar to pulling from Thunderstore.io's but gives more information that is needed to make this work.<br/> - Update for 0.217.46 |
+| 1.0.0     | - Initial Release                                                                                                                                                                                            |
