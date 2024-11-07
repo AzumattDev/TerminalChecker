@@ -16,7 +16,7 @@ namespace TerminalChecker
     public class TerminalCheckerPlugin : BaseUnityPlugin
     {
         internal const string ModName = "TerminalChecker";
-        internal const string ModVersion = "2.0.0";
+        internal const string ModVersion = "2.0.1";
         internal const string Author = "Azumatt";
         private const string ModGUID = Author + "." + ModName;
         private readonly Harmony _harmony = new(ModGUID);
